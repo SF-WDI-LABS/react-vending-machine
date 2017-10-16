@@ -1,18 +1,27 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+
+  static items = [
+    {
+      name: "Coca Cola",
+      price: 50
+    }, {
+      name: "Sprite",
+      price: 50
+    }, {
+      name: "Mr. Pibb",
+      price: 75
+    }
+  ];
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <p className="display -sm-width">INSERT COIN</p>
+        <button className="button -yellow">05c</button>
+        <button className="button -blue">10c</button>
+        <button className="button -green">25c</button>
       </div>
     );
   }
