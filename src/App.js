@@ -10,15 +10,18 @@ class App extends Component {
         {
           name: "Coca Cola",
           price: 50,
-          quantity: 10
+          quantity: 10,
+          code: "A1"
         }, {
           name: "Sprite",
           price: 50,
-          quantity: 10
+          quantity: 10,
+          code: "B2"
         }, {
           name: "Mr. Pibb",
           price: 75,
-          quantity: 10
+          quantity: 10,
+          code: "C3"
         }
       ],
       balance: 0
