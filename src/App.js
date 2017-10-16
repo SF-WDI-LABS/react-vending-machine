@@ -37,10 +37,14 @@ class App extends Component {
   }
 
   render() {
-    let itemElements = this.state.items.map((e,i) => <Item data={e} key={i} />)
+    let itemElements = this.state.items.map((e,i) => <Item data={e} key={i} />);
+    //let balanceDisplay = this.state.balance || "INSERT COIN";
+    // if (this.state.balance === 0) {
+    //   balanceDisplay = "INSERT COIN";
+    // }
     return (
       <div className="App">
-        <p className="display -sm-width">{this.state.balance}</p>
+        <p className="display -sm-width">{this.state.balance || "INSERT COIN"}</p>
         <button className="button -yellow" onClick={(e) => this.addBalance(e, 5)}>05c</button>
         <button className="button -blue" onClick={(e) => this.addBalance(e, 10)}>10c</button>
         <button className="button -green" onClick={(e) => this.addBalance(e, 25)}>25c</button>
