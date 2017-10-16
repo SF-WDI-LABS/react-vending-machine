@@ -20,17 +20,24 @@ class App extends Component {
           price: 75,
           quantity: 10
         }
-      ]
+      ],
+      balance: 0
     };
+  }
+
+  addBalance(amount) {
+    this.setState({
+      balance: this.state.balance + amount
+    })
   }
 
   render() {
     return (
       <div className="App">
-        <p className="display -sm-width">INSERT COIN</p>
-        <button className="button -yellow">05c</button>
-        <button className="button -blue">10c</button>
-        <button className="button -green">25c</button>
+        <p className="display -sm-width">{this.state.balance || "INSERT COIN"}</p>
+        <button className="button -yellow" onClick={(e) => this.addBalance(5)}>05c</button>
+        <button className="button -blue" onClick={(e) => this.addBalance(10)}>10c</button>
+        <button className="button -green" onClick={(e) => this.addBalance(25)}>25c</button>
       </div>
     );
   }
