@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Item from './Item.js'
 import './App.css';
 
 class App extends Component {
@@ -35,12 +36,15 @@ class App extends Component {
   }
 
   render() {
+    let itemsComponents = this.state.items.map(item => <Item item={item} />)
     return (
       <div className="App">
         <p className="display -sm-width">{this.state.balance || "INSERT COIN"}</p>
         <button className="button -yellow" onClick={(e) => this.addBalance(5)}>05c</button>
         <button className="button -blue" onClick={(e) => this.addBalance(10)}>10c</button>
         <button className="button -green" onClick={(e) => this.addBalance(25)}>25c</button>
+
+        {itemsComponents}
       </div>
     );
   }
