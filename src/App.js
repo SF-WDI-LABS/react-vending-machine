@@ -36,7 +36,7 @@ class App extends Component {
   }
 
   render() {
-    let itemsComponents = this.state.items.map(item => <Item item={item} />)
+    let itemsComponents = this.state.items.map((item, index) => <Item item={item} key={index} />)
     return (
       <div className="App">
         <p className="display -sm-width">{this.state.balance || "INSERT COIN"}</p>
