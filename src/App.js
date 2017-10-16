@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Item from './Item.js'
+import Item from './Item.js';
+import ItemSelector from './ItemSelector.js';
 import './App.css';
 
 class App extends Component {
@@ -25,7 +26,8 @@ class App extends Component {
           code: "C3"
         }
       ],
-      balance: 0
+      balance: 0,
+      selectedItem: {}
     };
   }
 
@@ -33,6 +35,12 @@ class App extends Component {
     this.setState({
       balance: this.state.balance + amount
     })
+  }
+
+  selectItem(code) {
+    this.setState({
+      selectedItem: this.state.items.find(item => item.code === code) || {}
+    });
   }
 
   render() {
@@ -43,7 +51,8 @@ class App extends Component {
         <button className="button -yellow" onClick={(e) => this.addBalance(5)}>05c</button>
         <button className="button -blue" onClick={(e) => this.addBalance(10)}>10c</button>
         <button className="button -green" onClick={(e) => this.addBalance(25)}>25c</button>
-
+        <ItemSelector onSelectionTyped={this.selectItem.bind(this)} />
+        {this.state.selectedItem.name || ""}
         {itemsComponents}
       </div>
     );
