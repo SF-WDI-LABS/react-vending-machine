@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Item from './components/Item'
+import Item from './components/Item';
+import ItemSelector from './components/ItemSelector';
 import './App.css';
 
 class App extends Component {
@@ -36,6 +37,12 @@ class App extends Component {
     });
   }
 
+  selectionTyped(typedSelection) {
+    // look through the state.items for an item with that code
+    let selectedItem = this.state.items.find(item => item.code === typedSelection);
+    console.log("selected item is", selectedItem);
+  }
+
   render() {
     let itemElements = this.state.items.map((e,i) => <Item data={e} key={i} />);
     //let balanceDisplay = this.state.balance || "INSERT COIN";
@@ -48,6 +55,7 @@ class App extends Component {
         <button className="button -yellow" onClick={(e) => this.addBalance(e, 5)}>05c</button>
         <button className="button -blue" onClick={(e) => this.addBalance(e, 10)}>10c</button>
         <button className="button -green" onClick={(e) => this.addBalance(e, 25)}>25c</button>
+        <ItemSelector onSelectionTyped={this.selectionTyped.bind(this)} />
         {itemElements}
       </div>
     );
