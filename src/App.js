@@ -6,13 +6,16 @@ class App extends Component {
   static items = [
     {
       name: "Coca Cola",
-      price: 50
+      price: 50,
+      quantity: 10
     }, {
       name: "Sprite",
-      price: 50
+      price: 50,
+      quantity: 10
     }, {
       name: "Mr. Pibb",
-      price: 75
+      price: 75,
+      quantity: 10
     }
   ];
   render() {

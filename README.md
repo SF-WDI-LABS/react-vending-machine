@@ -19,7 +19,7 @@ _As a vendor, I want a vending machine that accepts coins so I can collect money
 _As a vendor, I want customers to see what they can buy so I can give them an incentive to put money in the machine._
 
 - The machine shows a list of items with their prices and remaining inventory.
-- The list of items is populated from `item.service`, which uses the external API to return an array of item objects.
+- The list of items is populated from `items`, the array of objects at the top of the `App.js` file.
 
 ### Code Together: Select Item
 
@@ -27,7 +27,7 @@ _As a vendor, I want customers to be able to select an item so I know how much m
 
 - The machine includes a text input that accepts item codes.
 - The text input should not accept more than two characters.
-- The machine responds with "{{item.name}} selected" and selects an item if a user enters a code that matches that item's code.
+- The machine responds with "{item.name} selected" and selects an item if a user enters a code that matches that item's code.
 
 ### Pair Lab: Dispense Item
 
