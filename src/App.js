@@ -3,21 +3,27 @@ import './App.css';
 
 class App extends Component {
 
-  static items = [
-    {
-      name: "Coca Cola",
-      price: 50,
-      quantity: 10
-    }, {
-      name: "Sprite",
-      price: 50,
-      quantity: 10
-    }, {
-      name: "Mr. Pibb",
-      price: 75,
-      quantity: 10
-    }
-  ];
+  constructor(props) {
+    super(props);
+    this.state = {
+      items: [
+        {
+          name: "Coca Cola",
+          price: 50,
+          quantity: 10
+        }, {
+          name: "Sprite",
+          price: 50,
+          quantity: 10
+        }, {
+          name: "Mr. Pibb",
+          price: 75,
+          quantity: 10
+        }
+      ]
+    };
+  }
+
   render() {
     return (
       <div className="App">
