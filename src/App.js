@@ -57,7 +57,7 @@ class App extends Component {
         this.state.selectedItem.quantity--;
         this.setState({
           balance: this.state.balance - this.state.selectedItem.price,
-          errorMessage: ""
+          errorMessage: "ITEM DISPENSED"
         });
       }
     }
